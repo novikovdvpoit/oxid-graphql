@@ -18,7 +18,6 @@
         "oxid-esales/graphql-account": "*",
         "oxid-esales/graphql-checkout": "*"
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
