@@ -1,9 +1,8 @@
 {
-    "name": "oxid-esales/graphql-storefront",
+    "name": "novikovdvpoit/oxid-graphql",
     "description": "OXID eSales GraphQL storefront module",
     "type": "oxideshop-module",
     "keywords": ["oxid", "modules", "eShop", "GraphQL"],
-    "homepage": "https://www.oxid-esales.com",
     "license": ["GPL-3.0"],
     "extra": {
         "oxideshop": {
