@@ -14,7 +14,7 @@ $sMetadataVersion = '2.0';
  * Module information
  */
 $aModule = [
-    'id'            => 'oe_graphql_storefront',
+    'id'            => 'pr_graphql',
     'title'         => 'GraphQL Storefront',
     'description'   => 'OXID GraphQL Storefront',
     'thumbnail'   => 'out/pictures/logo.png',
