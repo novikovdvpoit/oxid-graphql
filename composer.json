@@ -3,10 +3,11 @@
     "description": "OXID eSales GraphQL storefront module",
     "type": "oxideshop-module",
     "keywords": ["oxid", "modules", "eShop", "GraphQL"],
+    "homepage": "https://github.com/novikovdvpoit/oxid-graphql",
     "license": ["GPL-3.0"],
     "extra": {
         "oxideshop": {
-            "target-directory": "oe/graphql-storefront",
+            "target-directory": "projekteins/pr_graphql",
             "blacklist-filter": [
                 "tests/**/*"
             ]
@@ -38,6 +39,7 @@
     "autoload": {
         "psr-4": {
             "OxidEsales\\GraphQL\\Storefront\\": "src",
+            "OxidEsales\\GraphQL\\Storefront\\Tests\\": "tests"
         }
     },
     "scripts": {
