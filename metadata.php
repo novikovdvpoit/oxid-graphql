@@ -8,17 +8,17 @@
 /**
  * Metadata version
  */
-$sMetadataVersion = '2.1';
+$sMetadataVersion = '2.0';
 
 /**
  * Module information
  */
 $aModule = [
-    'id'            => 'pr_graphql',
+    'id'            => 'oe_graphql_storefront',
     'title'         => 'GraphQL Storefront',
     'description'   => 'OXID GraphQL Storefront',
     'thumbnail'   => 'out/pictures/logo.png',
-    'version'     => '1.0',
+    'version'     => '2.0.1',
     'author'      => 'OXID eSales',
     'url'         => 'https://github.com/OXID-eSales/graphql-storefront-module',
     'email'       => 'info@oxid-esales.com',
