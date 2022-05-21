@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\GraphQL\Storefront\Product\DataType;
+namespace Projekteins\GraphQL\Mutator\Product\DataType;
 
 use DateTimeInterface;
 use OxidEsales\Eshop\Application\Model\Article as EshopProductModel;

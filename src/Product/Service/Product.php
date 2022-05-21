@@ -5,19 +5,18 @@
  * See LICENSE file for license details.
  */
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-namespace OxidEsales\GraphQL\Storefront\Product\Service;
+namespace Projekteins\GraphQL\Mutator\Product\Service;
 
 use OxidEsales\GraphQL\Base\DataType\Pagination\Pagination as PaginationFilter;
 use OxidEsales\GraphQL\Base\DataType\Sorting\Sorting as BaseSorting;
 use OxidEsales\GraphQL\Base\Exception\InvalidLogin;
 use OxidEsales\GraphQL\Base\Exception\NotFound;
-use OxidEsales\GraphQL\Storefront\Product\DataType\Product as ProductDataType;
-use OxidEsales\GraphQL\Storefront\Product\DataType\ProductFilterList;
-use OxidEsales\GraphQL\Storefront\Product\Exception\ProductNotFound;
-use OxidEsales\GraphQL\Storefront\Shared\Infrastructure\Repository;
-use OxidEsales\GraphQL\Storefront\Shared\Service\Authorization;
+use Projekteins\GraphQL\Mutator\Product\DataType\Product as ProductDataType;
+use Projekteins\GraphQL\Mutator\Product\Exception\ProductNotFound;
+use Projekteins\GraphQL\Mutator\Product\Infrastructure\Product as ProductInfrastructure;
+use Projekteins\GraphQL\Mutator\Shared\Infrastructure\Repository as Repository;
 use TheCodingMachine\GraphQLite\Types\ID;
 
 final class Product
@@ -25,15 +24,10 @@ final class Product
     /** @var Repository */
     private $repository;
 
-    /** @var Authorization */
-    private $authorizationService;
-
     public function __construct(
         Repository $repository,
-        Authorization $authorizationService
     ) {
         $this->repository = $repository;
-        $this->authorizationService = $authorizationService;
     }
 
     /**
@@ -53,32 +47,14 @@ final class Product
             return $product;
         }
 
-        if ($this->authorizationService->isAllowed('VIEW_INACTIVE_PRODUCT')) {
-            return $product;
-        }
-
         throw new InvalidLogin('Unauthorized');
     }
 
     /**
-     * @return ProductDataType[]
+     * @return true
      */
-    public function products(
-        ProductFilterList $filter,
-        ?PaginationFilter $pagination,
-        BaseSorting $sort
-    ): array {
-        // In case user has VIEW_INACTIVE_PRODUCT permissions
-        // return all products including inactive ones
-        if ($this->authorizationService->isAllowed('VIEW_INACTIVE_PRODUCT')) {
-            $filter = $filter->withActiveFilter(null);
-        }
-
-        return $this->repository->getList(
-            ProductDataType::class,
-            $filter,
-            $pagination ?? new PaginationFilter(),
-            $sort
-        );
+    public function store(ProductDataType $product): bool
+    {
+        return (new ProductInfrastructure())->saveProduct($product);
     }
 }

@@ -7,14 +7,13 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\GraphQL\Storefront\Product\Controller;
+namespace Projekteins\GraphQL\Mutator\Product\Controller;
 
-use OxidEsales\GraphQL\Base\DataType\Pagination\Pagination as PaginationFilter;
-use OxidEsales\GraphQL\Storefront\Product\DataType\Product as ProductDataType;
-use OxidEsales\GraphQL\Storefront\Product\DataType\ProductFilterList;
-use OxidEsales\GraphQL\Storefront\Product\DataType\Sorting;
-use OxidEsales\GraphQL\Storefront\Product\Service\Product as ProductService;
+use Projekteins\GraphQL\Mutator\Product\DataType\Product as ProductDataType;
+use Projekteins\GraphQL\Mutator\Product\Service\Product as ProductService;
 use TheCodingMachine\GraphQLite\Annotations\Query;
+use TheCodingMachine\GraphQLite\Annotations\Mutation;
+use TheCodingMachine\GraphQLite\Annotations\Logged;
 use TheCodingMachine\GraphQLite\Types\ID;
 
 final class Product
@@ -37,19 +36,13 @@ final class Product
     }
 
     /**
-     * @Query()
-     *
-     * @return ProductDataType[]
+     * @Mutation()
+     * @Logged()
      */
-    public function products(
-        ?ProductFilterList $filter = null,
-        ?PaginationFilter $pagination = null,
-        ?Sorting $sort = null
-    ): array {
-        return $this->productService->products(
-            $filter ?? new ProductFilterList(),
-            $pagination,
-            $sort ?? Sorting::fromUserInput()
-        );
+    public function productTitleUpdate(ProductDataType $product): ProductDataType
+    {
+        $this->productService->store($product);
+
+        return $product;
     }
 }

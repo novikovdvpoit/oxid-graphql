@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\GraphQL\Storefront\Product\Exception;
+namespace Projekteins\GraphQL\Mutator\Product\Exception;
 
 use OxidEsales\GraphQL\Base\Exception\NotFound;
 

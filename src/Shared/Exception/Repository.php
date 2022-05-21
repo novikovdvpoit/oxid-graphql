@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\GraphQL\Storefront\Shared\Exception;
+namespace Projekteins\GraphQL\Mutator\Shared\Exception;
 
 use RuntimeException;
 
