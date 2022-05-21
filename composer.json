@@ -4,6 +4,7 @@
     "type": "oxideshop-module",
     "keywords": ["oxid", "modules", "eShop", "GraphQL"],
     "homepage": "https://github.com/novikovdvpoit/oxid-graphql",
+    "license": "MIT",
     "extra": {
         "oxideshop": {
             "target-directory": "projekteins/pr_graphql",
