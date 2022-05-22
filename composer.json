@@ -7,8 +7,6 @@
     "license": ["MIT"],
     "require": {
         "php": ">=7.4",
-        "doctrine/dbal": "^v2.7",
-        "oxid-esales/graphql-base": "dev-b-6.5.x"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
