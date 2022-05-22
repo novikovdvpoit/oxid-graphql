@@ -28,7 +28,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Projekteins\\GraphQL\\Mutator\\": "./source/modules/projekteins/pr_graphql/src",
+            "Projekteins\\GraphQL\\Mutator\\": "./source/modules/projekteins/pr_graphql",
         }
     },
     "config": {
