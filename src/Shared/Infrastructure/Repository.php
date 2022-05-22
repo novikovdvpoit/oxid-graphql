@@ -17,7 +17,7 @@ use OxidEsales\GraphQL\Base\DataType\Pagination\Pagination as PaginationFilter;
 use OxidEsales\GraphQL\Base\DataType\ShopModelAwareInterface;
 use OxidEsales\GraphQL\Base\DataType\Sorting\Sorting as BaseSorting;
 use OxidEsales\GraphQL\Base\Exception\NotFound;
-use Projekteins\GraphQL\Mutator\Product\DataType\Product as ProductDataType;
+use OxidEsales\GraphQL\Storefront\Product\DataType\Product as ProductDataType;
 use Projekteins\GraphQL\Mutator\Shared\Exception\Repository as RepositoryException;
 use PDO;
 use RuntimeException;

@@ -9,14 +9,14 @@ declare(strict_types=1);
 
 namespace Projekteins\GraphQL\Mutator\Product\Controller;
 
-use Projekteins\GraphQL\Mutator\Product\DataType\Product as ProductDataType;
+use OxidEsales\GraphQL\Storefront\Product\DataType\Product as ProductDataType;
 use Projekteins\GraphQL\Mutator\Product\Service\Product as ProductService;
 use TheCodingMachine\GraphQLite\Annotations\Query;
 use TheCodingMachine\GraphQLite\Annotations\Mutation;
 use TheCodingMachine\GraphQLite\Annotations\Logged;
 use TheCodingMachine\GraphQLite\Types\ID;
 
-final class Product
+final class ProductMutation
 {
     /** @var ProductService */
     private $productService;

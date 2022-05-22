@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Projekteins\GraphQL\Mutator\Product\Infrastructure;
 
-use Projekteins\GraphQL\Mutator\Product\DataType\Product as ProductDataType;
+use OxidEsales\GraphQL\Storefront\Product\DataType\Product as ProductDataType;
 
 final class ProductMutation
 {
