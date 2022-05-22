@@ -7,10 +7,7 @@
     "license": ["MIT"],
     "extra": {
         "oxideshop": {
-            "target-directory": "projekteins/pr_graphql",
-            "blacklist-filter": [
-                "tests/**/*"
-            ]
+            "target-directory": "projekteins/pr_graphql"
         }
     },
     "require": {
@@ -36,7 +33,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Projekteins\\GraphQL\\Mutator\\": "./source/modules/projekteins/pr_graphql/src"
+            "Projekteins\\GraphQL\\Mutator\\": "src"
         }
     },
     "scripts": {
