@@ -28,7 +28,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "OxidEsales\\GraphQL\\Storefront\\": "src",
+            "Projekteins\\GraphQL\\Mutator\\": "src",
         }
     },
     "config": {
